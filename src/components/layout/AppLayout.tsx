@@ -83,7 +83,7 @@ export function AppLayout({ children }: AppLayoutProps) {
 					</div>
 					<Button
 						variant="ghost"
-						className="w-full justify-start gap-3 text-muted-foreground hover:text-foreground"
+						className="w-full justify-start gap-3 text-muted-foreground hover:text-white"
 						onClick={handleSignOut}
 					>
 						<LogOut className="h-5 w-5" />
@@ -147,7 +147,7 @@ export function AppLayout({ children }: AppLayoutProps) {
 						<div className="border-t border-border p-4">
 							<Button
 								variant="ghost"
-								className="w-full justify-start gap-3 text-muted-foreground"
+								className="w-full justify-start gap-3 text-muted-foreground hover:text-white"
 								onClick={handleSignOut}
 							>
 								<LogOut className="h-5 w-5" />

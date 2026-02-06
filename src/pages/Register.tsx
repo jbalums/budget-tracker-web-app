@@ -64,6 +64,7 @@ export default function Register() {
 						</CardTitle>
 						<CardDescription>
 							Enter your details to get started
+							<br />
 						</CardDescription>
 					</CardHeader>
 					<form onSubmit={handleSubmit}>
