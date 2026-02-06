@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Budget Tracker Design System - Clean Fintech Aesthetic */
+
+@layer base {
+  :root {
+    /* Core backgrounds - Warm neutral slate */
+    --background: 220 14% 96%;
+    --foreground: 222 47% 11%;
+
+    /* Card surfaces - Crisp white */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popover surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Deep navy blue */
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Soft gray */
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted surfaces */
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Accent - Warm indigo */
+    --accent: 234 89% 74%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Semantic colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Income - Emerald green */
+    --income: 160 84% 39%;
+    --income-foreground: 0 0% 100%;
+    --income-muted: 160 60% 95%;
+
+    /* Expense - Rose red */
+    --expense: 0 72% 51%;
+    --expense-foreground: 0 0% 100%;
+    --expense-muted: 0 60% 97%;
+
+    /* Investment - Blue */
+    --investment: 217 91% 60%;
+    --investment-foreground: 0 0% 100%;
+    --investment-muted: 217 60% 96%;
+
+    /* Emergency - Amber */
+    --emergency: 38 92% 50%;
+    --emergency-foreground: 0 0% 100%;
+    --emergency-muted: 38 60% 96%;
+
+    /* Wants - Purple */
+    --wants: 258 90% 66%;
+    --wants-foreground: 0 0% 100%;
+    --wants-muted: 258 60% 97%;
+
+    /* Borders & inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 234 89% 74%;
+
+    --radius: 0.75rem;
+
+    /* Chart colors */
+    --chart-1: 160 84% 39%;
+    --chart-2: 258 90% 66%;
+    --chart-3: 217 91% 60%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 72% 51%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 234 89% 74%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 234 89% 74%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 234 89% 74%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --income: 160 84% 39%;
+    --income-foreground: 0 0% 100%;
+    --income-muted: 160 30% 15%;
+
+    --expense: 0 72% 51%;
+    --expense-foreground: 0 0% 100%;
+    --expense-muted: 0 30% 15%;
+
+    --investment: 217 91% 60%;
+    --investment-foreground: 0 0% 100%;
+    --investment-muted: 217 30% 15%;
+
+    --emergency: 38 92% 50%;
+    --emergency-foreground: 0 0% 100%;
+    --emergency-muted: 38 30% 15%;
+
+    --wants: 258 90% 66%;
+    --wants-foreground: 0 0% 100%;
+    --wants-muted: 258 30% 15%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 234 89% 74%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 234 89% 74%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 234 89% 74%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-sm;
+  }
+
+  .gradient-income {
+    background: linear-gradient(135deg, hsl(var(--income)) 0%, hsl(160 84% 30%) 100%);
+  }
+
+  .gradient-expense {
+    background: linear-gradient(135deg, hsl(var(--expense)) 0%, hsl(0 72% 40%) 100%);
+  }
+
+  .stat-card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:scale-[1.02] hover:-translate-y-0.5;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .progress-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+}
