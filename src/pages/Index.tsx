@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   Wallet,
   PieChart,
@@ -58,6 +59,7 @@ export default function Index() {
 						</span>
 					</div>
 					<div className="flex items-center gap-3">
+						<ThemeToggle />
 						{loading ? null : user ? (
 							<Button asChild>
 								<Link to="/dashboard">Go to Dashboard</Link>

@@ -2,6 +2,7 @@ import { ReactNode, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   LayoutDashboard,
   Wallet,
@@ -78,8 +79,11 @@ export function AppLayout({ children }: AppLayoutProps) {
 				</nav>
 
 				<div className="border-t border-border p-4">
-					<div className="mb-3 px-3 text-xs text-muted-foreground">
-						{user?.email}
+					<div className="mb-3 flex items-center justify-between px-3">
+						<span className="text-xs text-muted-foreground">
+							{user?.email}
+						</span>
+						<ThemeToggle />
 					</div>
 					<Button
 						variant="ghost"
